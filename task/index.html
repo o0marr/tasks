@@ -27,22 +27,19 @@
         <button id="resetButton">Show</button>
         
         <script>
-            // JavaScript to handle button actions
             const button1 = document.getElementById("button1");
             const button2 = document.getElementById("button2");
             const resetButton = document.getElementById("resetButton");
     
-            // Hide button1 when button2 is clicked
             button2.addEventListener("click", function () {
                 if (button1) {
-                    button1.style.display = "none"; // Hides button1
+                    button1.style.display = "none"; 
                 }
             });
     
-            // Reset all buttons to their original state
             resetButton.addEventListener("click", function () {
                 if (button1) {
-                    button1.style.display = ""; // Resets button1's display property
+                    button1.style.display = ""; 
                 }
             });
         </script>

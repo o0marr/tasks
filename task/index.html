@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
          <link rel="stylesheet" href="style.css">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"rel="stylesheet">
     </head>
     <script>
     var colors = ["red", "blue", "green","black","white","purple"];
@@ -21,12 +22,22 @@
     }
 </script>
     <body id='body' >
-        <button onclick="changeColor();" class="favorite styled" id="button1" type="button">Change</button>
+       
+
+          <div  class="form-check form-switch" >
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>    
+             <button onclick="changeColor();" class="favorite styled" id="button1" type="button">Change</button>
 
         <button type="button2" id="button2"> hide  </button>
         <button id="resetButton">Show</button>
-        
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-Pm0PCEFSfpE4+c1fuym9jCbaPfnfSwwLPbgX79A4EYkL2l0XPzzGVtLJQ1k8F2nd" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqF7pOCuPcxZAnlE8LsZfJKTY7scbgr8IlvZkc4lXt8zX" crossorigin="anonymous"></script>
+          
         <script>
+            const toggleButton = document.getElementById("toggleButton");
             const button1 = document.getElementById("button1");
             const button2 = document.getElementById("button2");
             const resetButton = document.getElementById("resetButton");
@@ -42,6 +53,19 @@
                     button1.style.display = ""; 
                 }
             });
+            toggleButton.addEventListener("click", function () {
+            const buttons = [button1, button2, resetButton];
+            buttons.forEach(button => {
+                if (button.style.display === "none") {
+                    button.style.display = "inline-block"; 
+                    
+                } else {
+                    button.style.display = "none"; 
+                }
+            });
+        });
         </script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

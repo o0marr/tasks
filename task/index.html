@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+         <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+    var colors = ["red", "blue", "green","black","white","purple"];
+    var colorIndex = 0;
+    function changeColor() {
+        var col = document.getElementById("body");
+        if( colorIndex >= colors.length ) {
+            colorIndex = 0;
+        }
+        col.style.backgroundColor = colors[colorIndex];
+        colorIndex++;
+    }
+</script>
+    <body id='body' >
+        <button onclick="changeColor();" class="favorite styled" id="button1" type="button">Change</button>
+
+        <button type="button2" id="button2"> hide  </button>
+        <button id="resetButton">Show</button>
+        
+        <script>
+            // JavaScript to handle button actions
+            const button1 = document.getElementById("button1");
+            const button2 = document.getElementById("button2");
+            const resetButton = document.getElementById("resetButton");
+    
+            // Hide button1 when button2 is clicked
+            button2.addEventListener("click", function () {
+                if (button1) {
+                    button1.style.display = "none"; // Hides button1
+                }
+            });
+    
+            // Reset all buttons to their original state
+            resetButton.addEventListener("click", function () {
+                if (button1) {
+                    button1.style.display = ""; // Resets button1's display property
+                }
+            });
+        </script>
+    </body>
+</html>

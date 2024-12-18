@@ -25,8 +25,8 @@
        
 
           <div  class="form-check form-switch" >
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault"></label>    
+            <input class="form-check-input" type="checkbox" id="toggleSwitch">
+            <label class="form-check-label" for="toggleSwitch"></label>    
              <button onclick="changeColor();" class="favorite styled" id="button1" type="button">Change</button>
 
         <button type="button2" id="button2"> hide  </button>
@@ -53,16 +53,13 @@
                     button1.style.display = ""; 
                 }
             });
-            toggleButton.addEventListener("click", function () {
+            toggleSwitch.addEventListener("change", function () {
             const buttons = [button1, button2, resetButton];
-            buttons.forEach(button => {
-                if (button.style.display === "none") {
-                    button.style.display = "inline-block"; 
-                    
-                } else {
-                    button.style.display = "none"; 
-                }
-            });
+            if (toggleSwitch.checked) {
+               buttons.forEach(button => button.style.display = "inline-block");
+            } else {
+                  buttons.forEach(button => button.style.display = "none"); 
+            }
         });
         </script>
         
